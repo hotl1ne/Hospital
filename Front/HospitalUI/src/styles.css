@@ -1,0 +1,18 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    text-wrap: nowrap;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: gainsboro;
+    border-radius: 10px;
+}

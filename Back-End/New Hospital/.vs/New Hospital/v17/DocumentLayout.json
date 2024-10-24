@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\New Hospital\\Back-End\\New Hospital\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|d:\\new hospital\\back-end\\new hospital\\new hospital\\controllers\\authcontroller\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|solutionrelative:new hospital\\controllers\\authcontroller\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|d:\\new hospital\\back-end\\new hospital\\new hospital\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|solutionrelative:new hospital\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|d:\\new hospital\\back-end\\new hospital\\new hospital\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2F2D3936-F4EF-4752-91E1-81903CD2A89C}|New Hospital\\New Hospital.csproj|solutionrelative:new hospital\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\Program.cs",
+              "RelativeDocumentMoniker": "New Hospital\\Program.cs",
+              "ToolTip": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\Program.cs",
+              "RelativeToolTip": "New Hospital\\Program.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T08:22:47.585Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\appsettings.json",
+              "RelativeDocumentMoniker": "New Hospital\\appsettings.json",
+              "ToolTip": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\appsettings.json",
+              "RelativeToolTip": "New Hospital\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-14T17:30:29.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthUserController.cs",
+              "DocumentMoniker": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\Controllers\\AuthController\\AuthUserController.cs",
+              "RelativeDocumentMoniker": "New Hospital\\Controllers\\AuthController\\AuthUserController.cs",
+              "ToolTip": "D:\\New Hospital\\Back-End\\New Hospital\\New Hospital\\Controllers\\AuthController\\AuthUserController.cs",
+              "RelativeToolTip": "New Hospital\\Controllers\\AuthController\\AuthUserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T10:34:13.218Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<div class="pagination-wrapper">
+
+  <span class="shown-on-page">
+    Rows per page: {{shownOnPage}}
+  </span>
+
+  <div class="pagination">
+
+  <button (click)="onPreviousPage()" [disabled]="currentPage === 1">
+    &lt;
+  </button>
+
+
+  @for (page of getPages(); track $index) 
+    {
+        <ng-container >
+            @if(page === -1){
+            <ng-container>
+            <span class="dots">...</span>
+            </ng-container>}
+            @if(page!== -1){
+            <ng-container>
+            <button [class.active]="page === currentPage" (click)="onPageClick(page)">
+                {{ page }}
+            </button>
+            </ng-container>}
+        </ng-container>
+    }
+
+  <button (click)="onNextPage()" [disabled]="currentPage === totalPages">
+    &gt;
+  </button>
+  </div>
+
+  <span class="total-pages">
+    1-{{shownOnPage}} of {{totalInfo}} 
+  </span>
+</div>

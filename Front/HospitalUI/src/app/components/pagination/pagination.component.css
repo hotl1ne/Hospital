@@ -1,0 +1,39 @@
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 1300px;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination .dots {
+  padding: 5px;
+  font-size: 14px;
+}
+
+
+
+.shown-on-page,
+.total-pages{
+  font-family: "Kanit", sans-serif;
+  color: black
+}

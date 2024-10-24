@@ -1,0 +1,189 @@
+<div class="dashboard-wrapper">
+    
+    <app-side-menu></app-side-menu>
+    
+    <div class="dashboard-panel">
+
+        <app-header></app-header>
+
+        <div class="dashboard">
+
+            <div class="theme-of-page">
+
+                <h2>Dashboard</h2>
+            
+            </div>
+
+            <div class="information-about-patients">
+
+                <div class="opd">
+
+                    <img src="assets\opd.svg" alt="opd">
+
+                    <div class="count-name">
+                        <span>{{patientInfo.opd}}</span>
+                        <span style="font-weight: bold;">OPD today</span>
+                    </div>
+
+                </div>
+
+                <div class="relieved">
+
+                    <img src="assets\relieved.svg" alt="patient">
+
+                    <div class="count-name">
+                        <span>{{patientInfo.relieved}}</span>
+                        <span style="font-weight: bold;" >Relieved today</span>
+                    </div>
+
+                </div>
+
+                <div class="patient">
+
+                    <img src="assets\patient.svg" alt="">
+
+                    <div class="count-name">
+                        <span>{{patientInfo.opd}}</span>
+                        <span style="font-weight: bold;" >In Patient today</span>
+                    </div>
+
+                </div>
+
+                <div class="ventilator">
+
+                    <img src="assets\ventilator.svg" alt="">
+
+                    <div class="count-name">
+                        <span>{{patientInfo.onVentilation}}</span>
+                        <span style="font-weight: bold;" >Ventilator</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="graphs">
+
+                <div class="hospital-survey">
+
+                    <div class="survey-chart">
+
+                        <h3>Hospital Survey</h3>
+
+                        <canvas baseChart
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            type="line">
+                        </canvas>
+
+                      </div>
+                    
+                </div>
+
+                <div class="common-diseases">
+
+                    <div class="diseases-chart" style="display: block;">
+
+                        <h3>Common Diseases Report</h3>
+
+                        <canvas baseChart 
+                                [datasets]="barChartData" 
+                                [labels]="barChartLabels" 
+                                [options]="barChartOptions" 
+                                chartType="bar">
+                        </canvas>
+                      </div>
+
+                </div>
+
+            </div>
+
+            <div class="other-info">
+
+                <div class="booked-appointment">
+
+                    <h3>Booked Appointment</h3>
+                    <div class="table-wrapper">
+                    <table class = "appointmet_table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th class = "v_name">Patient</th>
+                            <th class = "v_name">Date</th>
+                            <th class = "v_name">Doctor</th>
+                            <th class = "v_name">Diseases</th>
+                            <th class = "v_name">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @for(appointment of appointments; track appointment.patient_Name)
+                            {
+                                <tr>
+                                    <td class = "id">1</td>
+                                    <td class = "patient-name">{{appointment.patient_Name}}</td>
+                                    <td class = "date">{{appointment.date}}</td>
+                                    <td class = "doctor_name">{{appointment.doctor_Name}}</td>
+                                    <td class = "threatment">
+                                        <div class="threatment_text">
+                                            <p>{{appointment.appointment_Type}}</p>
+                                        </div>
+                                    </td>
+                                    <td class = "button-delete">
+                                        <button class="delete-btn"><img src="assets\trash.svg" alt="delete" class="delete"></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                      </table>
+                    </div>
+
+                </div>
+
+                <div class="doctor-list">
+
+                    <h3>List of Doctor</h3>
+                    <div class="doctor-table-wrapper">
+                        <table class = "appointmet_table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th class = "v_name">Doctor Name</th>
+                                <th class = "v_name">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @for(doctor of doctors; track doctor.doctor_Name)
+                                {
+                                    <tr>
+                                        <td class = "id"><img src="{{doctor.doctor_Pic}}" alt="doctor"></td>
+                                        <td class = "doctor-name">{{doctor.doctor_Name}}</td>
+                                        <td class = "status">
+                                            @if(doctor.status == "Active")
+                                            {
+                                                <div class="status-block" style="background-color: green;">
+                                                    {{doctor.status}}
+                                                </div>
+                                            }
+                                            @else 
+                                            {
+                                                <div class="status-block" style="background-color: red;">
+                                                    {{doctor.status}}
+                                                </div> 
+                                            }
+                                        </td>                                    
+                                    </tr>
+                                }
+                            </tbody>
+                          </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

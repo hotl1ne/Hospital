@@ -1,0 +1,86 @@
+<div class="appointment-wrapper">
+    
+    <app-side-menu></app-side-menu>
+    
+    <div class="appointment-panel">
+
+        <app-header></app-header>
+
+        <div class="appointment">
+
+            <div class="theme-of-page">
+
+                <h2>Appointment</h2>
+            
+                <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
+
+            </div>
+
+
+            <div class="appointment-table-wrapper">
+
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Patient Name 
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(0)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(0)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Clinic Location 
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(1)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(1)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Appointment Type 
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(2)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(2)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Check-In 
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(3)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(3)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Time 
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(4)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(4)">ᐯ</span>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>                    
+                    <tbody>
+                        @for (appointment of paginatedAppointments; track appointment.id) {
+                        <tr>
+                            <td class = "patient-name">{{appointment.patient_Name}}</td>
+                            <td class="cabinet-location">Harley Street</td>
+                            <td class="appointment-type">Bloods</td>
+                            <td class="yes">Yes</td>
+                            <td class = "time">09.30</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+
+                
+
+                <app-pagination [totalPages]="totalPages"
+                                [currentPage]="currentPage"
+                                [shownOnPage]="shownOnPage"
+                                [totalInfo]="totalInfo"
+                                (pageChanged)="onPageChange($event)">
+                </app-pagination>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

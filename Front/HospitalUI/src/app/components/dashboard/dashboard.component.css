@@ -1,0 +1,212 @@
+.dashboard-wrapper
+{
+    display: flex;
+    background-color: #E5E5E5;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.dashboard-panel{
+    display: flex;
+    flex-grow: 1;
+}
+
+.dashboard{
+    flex-grow: 1;
+    margin-left: 140px;
+    margin-top: 100px;
+    background-color: #E5E5E5;
+}
+
+.theme-of-page{
+    font-family: "Kanit", sans-serif;
+    font-size: large;
+}
+
+.information-about-patients{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    height: 75px;
+    margin-top: 10px;
+}
+
+.opd,
+.relieved,
+.patient,
+.ventilator{
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 210px;
+    height: 80px;
+    border-radius: 30px;
+    background-color: white;
+    padding-left: 30px;
+}
+
+.opd img,
+.relieved img,
+.patient img,
+.ventilator img{
+    width: 43px;
+    height: 43px;
+}
+
+.count-name
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 10px;
+    height: 60px;
+    width: 140px;
+}
+
+.count-name span{
+    font-family: "Kanit", sans-serif;
+}
+
+.graphs
+{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-top: 15px;
+}
+
+.hospital-survey,
+.common-diseases{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 500px;
+    height: 280px;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.survey-chart h3,
+.diseases-chart h3,
+.booked-appointment h3,
+.doctor-list h3{
+    font-family: "Kanit", sans-serif;
+}
+
+.other-info{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-top: 15px;
+}
+
+.booked-appointment{
+    border-radius: 15px;
+    background-color: white;
+    width: 700px;
+    height: 250px;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.table-wrapper,
+.doctor-table-wrapper
+{
+    width: 100%;
+    height: 220px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+table{
+    height: 200px;
+    font-family: "Kanit", sans-serif;
+    border-collapse: collapse;
+    font-size: small;
+}
+
+table thead{
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+}
+
+table tr
+{
+    height: 35px;
+    background-color: #EDF4FC;
+}
+
+table td{
+    text-align: center;
+}
+
+.appointmet_table{
+    width: 100%;
+}
+
+table tbody{
+    z-index: 999;
+}
+
+tbody tr
+{
+    background-color: white;
+    border-bottom: 1px solid g;
+    
+}
+
+.doctor_name,
+.id,
+.patient-name,
+.date{
+    font-weight: 600;
+}
+
+.doctor_name{
+    color: #271E4A;
+    opacity: 0.7;
+}
+
+.threatment_text{
+    background-color: red;
+    display: flex;
+    color: white;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn{
+    background: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.doctor-list
+{
+    width: 500px;
+    height: 250px;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.status-block{
+        color: white
+}
