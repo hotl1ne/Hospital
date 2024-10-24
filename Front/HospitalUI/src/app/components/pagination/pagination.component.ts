@@ -8,10 +8,10 @@ import { Component, EventEmitter, input, Input, Output } from '@angular/core';
   styleUrl: './pagination.component.css'
 })
 export class PaginationComponent {
-  @Input() totalPages: number = 10; 
-  @Input() currentPage: number = 1;
-  @Input() shownOnPage: number = 1;
-  @Input() totalInfo: number = 1; 
+  @Input() totalPages: number = 0; 
+  @Input() currentPage: number = 0;
+  @Input() shownOnPage: number = 0;
+  @Input() totalInfo: number = 0; 
   @Output() pageChanged: EventEmitter<number> = new EventEmitter<number>();
 
   getPages(): number[] {
@@ -33,7 +33,7 @@ export class PaginationComponent {
       visiblePages.push(i);
     }
 
-    if (this.currentPage < this.totalPages - 3) {
+    if (this.currentPage < this.totalPages - 2) {
       visiblePages.push(-1); 
     }
     
