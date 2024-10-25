@@ -1,0 +1,127 @@
+.patient-list-wrapper
+{
+    display: flex;
+    background-color: #E5E5E5;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.patient-list{
+    display: flex;
+    flex-grow: 1;
+}
+
+.patient{
+    flex-grow: 1;
+    margin-left: 140px;
+    margin-top: 100px;
+    background-color: #E5E5E5;
+}
+
+.patient-table-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-top: 10px;
+    padding: 20px 20px 20px 20px;
+}
+
+.theme-of-page{
+    display: flex;
+    width: 97%;
+    font-family: "Kanit", sans-serif;
+    font-size: large;
+}
+
+.theme-of-page{
+    display: flex;
+    width: 97%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-patient{
+    width: 160px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.add-patient:hover{
+    background-color: rgb(81, 81, 254);
+}
+
+.add-patient:active{
+    background-color: rgb(162, 162, 250);
+}
+
+table{
+    height: 80vh;
+    font-family: "Kanit", sans-serif;
+    border-collapse: collapse;
+}
+
+table thead{
+    background-color: rgb(136, 243, 243);
+}
+
+td{
+    font-family: "Kanit", sans-serif;
+    border-bottom: 1px solid gray;
+}
+
+tr:last-child{
+    border-bottom: none;
+}
+
+th {
+    position: relative; 
+    text-align: left;
+    padding: 12px;
+  }
+
+.sort-arrows {
+    position: absolute;
+    right: 0; 
+    top: 50%;
+    transform: translateY(-50%); 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sort-arrows span {
+    cursor: pointer;
+    margin: 2px 0; 
+    font-size: 0.5em; 
+    line-height: 1; 
+}
+
+.redirect-to-patient{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.redirect-img{
+    width: 30px;
+    height: 30px;
+}
+
+app-pagination {
+    align-self: center;
+    margin-top: auto; 
+    padding: 10px 0; 
+    background-color: #f8f8f8; 
+  }

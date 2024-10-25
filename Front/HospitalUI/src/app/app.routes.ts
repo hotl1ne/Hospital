@@ -3,6 +3,8 @@ import { LoginComponentComponent } from './components/login-component/login/logi
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { guardGuard } from './Guard/guard.guard';
 import { AppoitmentComponent } from './components/appoitment/appoitment.component';
+import { PatientComponent } from './components/patient/patient.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
 
 export const routes: Routes = [
     {
@@ -17,5 +19,9 @@ export const routes: Routes = [
     {
         path: "Appointment",
         component: AppoitmentComponent
+    },
+    {
+        path: "Patient",
+        component: PatientListComponent
     }
 ];

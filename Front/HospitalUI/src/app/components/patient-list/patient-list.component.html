@@ -1,0 +1,96 @@
+<div class="patient-list-wrapper">
+
+    <app-side-menu></app-side-menu>
+
+    <div class="patient-list">
+
+        <app-header></app-header>
+
+        <div class="patient">
+
+            <div class="theme-of-page">
+
+                <h2>Patient List</h2>
+
+                <div class="search-add-block">
+
+                    <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
+
+                    <button class = "add-patient">Add a Patient</button>
+
+                </div>
+            
+            </div>
+
+            <div class="patient-table-wrapper">
+
+                <table class="patient-table" id = "myTable">
+                    <thead>
+                        <tr>
+                            <th>ID Code
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(0)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(0)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Patient Name
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(1)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(1)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Age
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(2)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(2)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Diseases
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(3)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(3)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Patient Room
+                                <span class="sort-arrows">
+                                    <span class="arrow-up" (click)="sortTable(4)">ᐱ</span>
+                                    <span class="arrow-down" (click)="sortTable(4)">ᐯ</span>
+                                </span>
+                            </th>
+                            <th>Action
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (patient of paginatedPatients; track patient.id) {
+                            <tr>
+                                <td>{{patient.patient_Code}}</td>
+                                <td>{{patient.patient_Name}}</td>
+                                <td>{{patient.age}}</td>
+                                <td>{{patient.diseases}}</td>
+                                <td>{{patient.patient_Room}}</td>
+                                <td>
+                                    <button class="redirect-to-patient">
+                                        <img class = "redirect-img" src="assets\redirect.png" alt="redirect">
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <app-pagination [totalPages]="totalPages"
+                                [currentPage]="currentPage"
+                                [shownOnPage]="shownOnPage"
+                                [totalInfo]="totalInfo"
+                                (pageChanged)="onPageChange($event)">
+                </app-pagination>
+
+            </div>
+
+        </div>
+
+    </div>    
+
+</div>

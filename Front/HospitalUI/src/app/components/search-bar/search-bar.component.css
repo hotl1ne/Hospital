@@ -10,6 +10,12 @@
     border-radius: 5px;
     border: 1px solid black;
     box-sizing: border-box;
+    background-color: rgb(198, 198, 239);
+    outline: none;
+}
+
+.search-input::placeholder{
+    color: blue;
 }
 
 .search-input:hover{
