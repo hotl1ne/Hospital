@@ -73,25 +73,54 @@
 .graphs
 {
     display: flex;
-    justify-content: space-between;
     width: 95%;
     margin-top: 15px;
+    gap: 15px
 }
 
-.hospital-survey,
-.common-diseases{
+.hospital-survey{
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    width: 500px;
+    width: 480px;
     height: 280px;
     padding: 20px 20px 20px 20px;
     background-color: white;
     border-radius: 15px;
 }
 
+.common-diseases{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 480px;
+    height: 280px;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.documents-analizes{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow-x: hidden;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 220px;
+    max-height: 280px;
+    padding: 20px 30px 20px 20px;
+    border-radius: 15px;
+}
+
+.list-of-files{
+    padding-top: 20px;
+    padding-right: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 220px;
+}
+
 .survey-chart h3,
 .diseases-chart h3,
 .booked-appointment h3,
-.doctor-list h3{
+.doctor-list h3,
+.documents-analizes h3{
     font-family: "Kanit", sans-serif;
 }
 
@@ -210,3 +239,8 @@ tbody tr
 .status-block{
         color: white
 }
+
+app-pdf-viewer{
+    height: 250px;
+}
+

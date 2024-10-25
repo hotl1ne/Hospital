@@ -7,19 +7,38 @@ import { style } from '@angular/animations';
 import { IAppointment } from '../../Interfaces/Appointment/IApointment.module';
 import { ITeam } from '../../Interfaces/Team/ITeam.module';
 import { Survey, SurveyResponse } from '../../Interfaces/Dashboard/IDashboard.module';
+import { PdfViewerComponent } from "../pdf-viewer/pdf-viewer.component";
 
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [SideMenuComponent, HeaderComponent, BaseChartDirective],
+  imports: [SideMenuComponent, HeaderComponent, BaseChartDirective, PdfViewerComponent],
   providers: [provideCharts(withDefaultRegisterables())],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'] 
 })
 export class DashboardComponent {
   status = "Active";
+
+  pdfPaths = [
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf',
+    'assets/pdfs/Blood Test Results.pdf'
+  ];
+
+  getPdfFileName(pdfPath: string): string {
+    const parts = pdfPath.split('/');
+    return parts[parts.length - 1]; 
+  }
+  
 
   protected patientInfo: Survey = {
     opd: 150,

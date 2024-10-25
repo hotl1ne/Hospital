@@ -87,7 +87,7 @@
 
                         <h3>Common Diseases Report</h3>
 
-                        <canvas baseChart 
+                        <canvas class="diseases-canvas" baseChart 
                                 [datasets]="barChartData" 
                                 [labels]="barChartLabels" 
                                 [options]="barChartOptions" 
@@ -95,6 +95,18 @@
                         </canvas>
                       </div>
 
+                </div>
+
+                <div class="documents-analizes">
+
+                    <h3>Uploaded Files</h3>
+
+                    <div class="list-of-files">
+                        @for (pdfs of pdfPaths; track $index) 
+                        {
+                             <app-pdf-viewer pdfFileName={{getPdfFileName(pdfs)}} pdfFilePath={{pdfs}}></app-pdf-viewer>
+                        }
+                    </div>
                 </div>
 
             </div>

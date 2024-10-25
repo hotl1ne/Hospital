@@ -4,11 +4,13 @@ import { HeaderComponent } from "../header/header.component";
 import { SearchBarComponent } from "../search-bar/search-bar.component";
 import { IPatient } from '../../Interfaces/Patient/IPatientList.module';
 import { PaginationComponent } from "../pagination/pagination.component";
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-patient-list',
   standalone: true,
-  imports: [SideMenuComponent, HeaderComponent, SearchBarComponent, PaginationComponent],
+  imports: [SideMenuComponent, HeaderComponent, SearchBarComponent, PaginationComponent, RouterLink],
   templateUrl: './patient-list.component.html',
   styleUrl: './patient-list.component.css'
 })
