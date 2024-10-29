@@ -11,50 +11,51 @@
             <div class="theme-of-page">
 
                 <h2>Patient List</h2>
-
-                <div class="search-add-block">
-
-                    <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
-
-                    <button routerLink="/AddPatient" class = "add-patient">Add a Patient</button>
-
-                </div>
             
             </div>
 
             <div class="patient-table-wrapper">
+
+                <div class="table-theme">
+                    
+                    <h3>List Of Patients</h3>
+
+                    <div class="search-add-block">
+    
+                        <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
+    
+                        <button routerLink="/AddPatient" class = "add-patient">Add a Patient</button>
+    
+                    </div>
+
+                </div>
 
                 <table class="patient-table" id = "myTable">
                     <thead>
                         <tr>
                             <th>ID Code
                                 <span class="sort-arrows">
-                                    <span class="arrow-up" (click)="sortTable(0)">ᐱ</span>
-                                    <span class="arrow-down" (click)="sortTable(0)">ᐯ</span>
+                                    <span class="arrow-down" (click)="sortTable(0)">⭣</span>
                                 </span>
                             </th>
                             <th>Patient Name
                                 <span class="sort-arrows">
-                                    <span class="arrow-up" (click)="sortTable(1)">ᐱ</span>
-                                    <span class="arrow-down" (click)="sortTable(1)">ᐯ</span>
+                                    <span class="arrow-down" (click)="sortTable(1)">⭣</span>
                                 </span>
                             </th>
                             <th>Age
                                 <span class="sort-arrows">
-                                    <span class="arrow-up" (click)="sortTable(2)">ᐱ</span>
-                                    <span class="arrow-down" (click)="sortTable(2)">ᐯ</span>
+                                    <span class="arrow-down" (click)="sortTable(2)">⭣</span>
                                 </span>
                             </th>
                             <th>Diseases
                                 <span class="sort-arrows">
-                                    <span class="arrow-up" (click)="sortTable(3)">ᐱ</span>
-                                    <span class="arrow-down" (click)="sortTable(3)">ᐯ</span>
+                                    <span class="arrow-down" (click)="sortTable(3)">⭣</span>
                                 </span>
                             </th>
                             <th>Patient Room
                                 <span class="sort-arrows">
-                                    <span class="arrow-up" (click)="sortTable(4)">ᐱ</span>
-                                    <span class="arrow-down" (click)="sortTable(4)">ᐯ</span>
+                                    <span class="arrow-down" (click)="sortTable(4)">⭣</span>
                                 </span>
                             </th>
                             <th>Action

@@ -9,14 +9,14 @@
 .pagination button {
   padding: 5px 10px;
   border: none;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 0%;
   transition: background-color 0.3s ease;
 }
 
 .pagination button.active {
-  background-color: #007bff;
+  background-color: #CA79C6;
   color: white;
 }
 

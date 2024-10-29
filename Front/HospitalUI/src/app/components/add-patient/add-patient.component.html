@@ -17,6 +17,76 @@
 
             <div class="form-wrapper">
                 
+                <div class="theme-of-wrapper">
+
+                    <h3>Add Patient Information</h3>
+                
+                    <button routerLink="/Patient" class="return-to-list">
+
+                        Patient List
+                    
+                    </button>
+
+                </div>
+
+                <form id="patientForm" action="submit" class="client-information" (ngSubmit)="onSubmit()" [formGroup]="patientForm">
+
+                    <div class="initial-inputs">
+
+                        <input type="text" class="name-input" autocomplete="off" placeholder="First Name *" formControlName="firstName">
+
+                        <input type="text" class ="last-name-input" autocomplete="off" placeholder="Last Name *" formControlName="lastName">
+
+                    </div>
+
+                    <div class="contact-inputs">
+
+                        <input type="text" class = "phone-number" autocomplete="off" placeholder="Phone Number *" formControlName="phoneNumber">
+                        <input type="text" class="email-adress" autocomplete="off" placeholder="Email Adress *" formControlName="emailAdress">
+
+                        <input type="text" class = "adress" autocomplete="off" placeholder="Adress *" formControlName="adress">
+
+                    </div>
+
+                    <div class="additional-info">
+
+                        <input type="text" class="age-input" autocomplete="off" placeholder="Age *" formControlName="age">
+
+                        <input type="text" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" class="dob" autocomplete="off" placeholder="Date of Birth *" formControlName="dob">
+
+                        <input type="text" class="married-status" autocomplete="off" placeholder="Married Status *" formControlName="marriedStatus">
+
+                        <input type="file" class="photo-loader" (change)="onFileSelected($event)" formControlName = "photo">
+
+                    </div>
+                    
+                    <div class="numbered-info">
+
+                        <input type="text" class="sugar-input" placeholder="Sugar" formControlName="sugar">
+
+                        <input type="text" class="heart-beat" placeholder="Heart Beat" formControlName="heartBeat">
+
+                        <input type="text" class="blood-preasure" placeholder="Blood Preasure" formControlName="bloodPreasure">
+
+                        <input type="text" class="haemoglobin" placeholder="Haemoglobin" formControlName="haemoglobin">
+
+                    </div>
+
+                    <div class="symptoms">
+
+                        <input type="text" class="symptoms-input" placeholder="Symptoms" formControlName = "symptoms">
+
+                    </div>
+
+
+                    <div class="submit">
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    
+                    </div>
+                </form>
+
             </div>
 
         </div>

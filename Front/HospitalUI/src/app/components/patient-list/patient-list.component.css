@@ -30,6 +30,16 @@
     padding: 20px 20px 20px 20px;
 }
 
+.table-theme{
+    display: flex;
+    width: 97%;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Kanit", sans-serif;
+}
+
 .theme-of-page{
     display: flex;
     width: 97%;
@@ -71,10 +81,11 @@ table{
 }
 
 table thead{
-    background-color: rgb(136, 243, 243);
+    background-color: rgb(255, 232, 232);
 }
 
 td{
+    color: #271E4A;
     font-family: "Kanit", sans-serif;
     border-bottom: 1px solid gray;
 }
@@ -85,8 +96,12 @@ tr:last-child{
 
 th {
     position: relative; 
-    text-align: left;
+    text-align: center;
     padding: 12px;
+  }
+
+  td{
+    text-align: center;
   }
 
 .sort-arrows {
@@ -101,7 +116,7 @@ th {
   .sort-arrows span {
     cursor: pointer;
     margin: 2px 0; 
-    font-size: 0.5em; 
+    font-size: 0.9em; 
     line-height: 1; 
 }
 

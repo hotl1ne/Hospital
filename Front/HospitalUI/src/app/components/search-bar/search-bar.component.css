@@ -8,18 +8,19 @@
     height: 30px;
     padding-left: 40px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     box-sizing: border-box;
-    background-color: rgb(198, 198, 239);
+    background-color: rgb(255, 255, 255);
     outline: none;
 }
 
 .search-input::placeholder{
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 
 .search-input:hover{
-    border: 2px solid blue;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .search-img{

@@ -36,3 +36,148 @@
     font-family: "Kanit", sans-serif;
     font-size: large;
 }
+
+.theme-of-wrapper{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Kanit", sans-serif;
+}
+
+.return-to-list{
+    background-color: #FF706F;
+    border: none;
+    color: white;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.return-to-list:hover{
+    background-color: #fb9393;
+}
+
+.return-to-list:active{
+    background-color: #f8a9a9;
+}
+
+.client-information{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+input:hover{
+    border-bottom: 3px solid gray;
+}
+
+
+.initial-inputs,
+.contact-inputs{
+    display: flex;
+    gap: 50px;
+}
+
+.contact-inputs,
+.additional-info,
+.numbered-info,
+.symptoms
+{
+    margin-top: 50px;
+}
+
+.additional-info,
+.numbered-info{
+    display: flex;
+    gap:60px;
+}
+
+.phone-number,
+.email-adress{
+    width: 225px;
+}
+
+.name-input,
+.last-name-input,
+.adress{
+    width: 500px;
+    height: 30px;
+}
+
+.age-input,
+.dob,
+.married-status,
+.photo-loader,
+.sugar-input,
+.heart-beat,
+.blood-preasure,
+.haemoglobin{
+    height: 30px;
+    width: 217px;
+}
+
+.symptoms-input{
+    width: 1050px;
+    height: 30px;
+}
+
+.submit{
+    margin-top: 20px;
+    height: 40px;
+    display: flex;
+    width: 97%;
+    justify-content: end;
+}
+
+.submit-btn{
+    background-color: #CA79C6;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    transition: 0.3s ease-in-out;
+}
+
+.submit-btn:hover{
+    background-color: #ca8dc7;
+}
+
+
+.photo-loader::-webkit-file-upload-button {
+    display: none;
+  }
+  .photo-loader::after {
+    content: 'Select Photo';
+    display: inline-block;
+    background-color: green;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    margin-left: 42px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+
+  
