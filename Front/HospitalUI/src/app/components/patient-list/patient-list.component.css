@@ -129,6 +129,14 @@ th {
     cursor: pointer;
 }
 
+.action{
+    text-align: left;
+}
+
+.redirect-btn{
+    text-align: center;
+}
+
 .redirect-img{
     width: 30px;
     height: 30px;

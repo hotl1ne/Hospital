@@ -92,6 +92,33 @@ th {
   flex-direction: column;
 }
 
+.sort-arrows_1 {
+  position: absolute;
+  right: 73px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-arrows_2 {
+  position: absolute;
+  right: 73px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-arrows_3 {
+  position: absolute;
+  right: 73px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  display: flex;
+  flex-direction: column;
+}
+
 .sort-arrows span {
   cursor: pointer;
   margin: 2px 0; 

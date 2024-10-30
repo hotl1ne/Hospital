@@ -51,4 +51,18 @@ export class Auth {
     return this.getToken() !== null; 
   }
 
+  logOut() {
+    if(this.isLoggedIn()){
+      sessionStorage.clear();
+
+      return this.http.delete(`${this.apiUrl}/Logout`);
+
+    }
+    else{
+      sessionStorage.clear();
+      return alert("Something went wrong, you were logged out!");
+    
+    }
+  }
+
 }

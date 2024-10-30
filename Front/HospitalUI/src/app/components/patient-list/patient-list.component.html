@@ -34,31 +34,31 @@
                     <thead>
                         <tr>
                             <th>ID Code
-                                <span class="sort-arrows">
+                                <span class="sort-arrows_1">
                                     <span class="arrow-down" (click)="sortTable(0)">⭣</span>
                                 </span>
                             </th>
                             <th>Patient Name
-                                <span class="sort-arrows">
+                                <span class="sort-arrows_2">
                                     <span class="arrow-down" (click)="sortTable(1)">⭣</span>
                                 </span>
                             </th>
                             <th>Age
-                                <span class="sort-arrows">
+                                <span class="sort-arrows_3">
                                     <span class="arrow-down" (click)="sortTable(2)">⭣</span>
                                 </span>
                             </th>
                             <th>Diseases
-                                <span class="sort-arrows">
+                                <span class="sort-arrow_4">
                                     <span class="arrow-down" (click)="sortTable(3)">⭣</span>
                                 </span>
                             </th>
                             <th>Patient Room
-                                <span class="sort-arrows">
+                                <span class="sort-arrow_5">
                                     <span class="arrow-down" (click)="sortTable(4)">⭣</span>
                                 </span>
                             </th>
-                            <th>Action
+                            <th class = "action">Action
 
                             </th>
                         </tr>
@@ -71,7 +71,7 @@
                                 <td>{{patient.age}}</td>
                                 <td>{{patient.diseases}}</td>
                                 <td>{{patient.patient_Room}}</td>
-                                <td>
+                                <td class = "redirect-btn">
                                     <button class="redirect-to-patient">
                                         <img class = "redirect-img" src="assets\redirect.png" alt="redirect">
                                     </button>
