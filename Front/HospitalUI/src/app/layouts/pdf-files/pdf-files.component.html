@@ -1,0 +1,20 @@
+<div class="general-report-theme">
+
+    <h3>Patient Analyses</h3>
+
+    <button class="change-view-btn" (click)="changeView()">
+        <img src="assets\right-button.png" alt="" class="change-view-img">
+    </button>
+
+</div>
+
+<div class="general-report-wrapper">
+
+    <div class="list-of-files">
+        @for (pdfs of pdfPaths; track $index) 
+        {
+             <app-pdf-viewer pdfFileName={{getPdfFileName(pdfs)}} pdfFilePath={{pdfs}}></app-pdf-viewer>
+        }
+    </div>
+
+</div>

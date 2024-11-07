@@ -1,0 +1,101 @@
+<div class="patient-list-wrapper">
+
+    <app-sidebar></app-sidebar>
+
+    <div class="patient-list">
+
+        <app-header></app-header>
+
+        <div class="patient">
+
+            <div class="theme-of-page">
+
+                <h2>Patient List</h2>
+            
+            </div>
+
+            @if (isLoading) {
+                <app-loader></app-loader>
+            }@else {
+
+            <div class="patient-table-wrapper">
+
+                <div class="table-theme">
+                    
+                    <h3>List Of Patients</h3>
+
+                    <div class="search-add-block">
+    
+                        <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
+    
+                        <button routerLink="/AddPatient" class = "add-patient">Add a Patient</button>
+    
+                    </div>
+
+                </div>
+
+                <table class="patient-table" id = "myTable">
+                    <thead>
+                        <tr>
+                            <th>ID Code
+                                <span class="sort-arrows_1">
+                                    <span class="arrow-down" (click)="sortTable(0)">⭣</span>
+                                </span>
+                            </th>
+                            <th>Patient Name
+                                <span class="sort-arrows_2">
+                                    <span class="arrow-down" (click)="sortTable(1)">⭣</span>
+                                </span>
+                            </th>
+                            <th>Age
+                                <span class="sort-arrows_3">
+                                    <span class="arrow-down" (click)="sortTable(2)">⭣</span>
+                                </span>
+                            </th>
+                            <th>Diseases
+                                <span class="sort-arrow_4">
+                                    <span class="arrow-down" (click)="sortTable(3)">⭣</span>
+                                </span>
+                            </th>
+                            <th>Patient Room
+                                <span class="sort-arrow_5">
+                                    <span class="arrow-down" (click)="sortTable(4)">⭣</span>
+                                </span>
+                            </th>
+                            <th class = "action">Action
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (patient of paginatedPatients; track patient.id) {
+                            <tr>
+                                <td>{{patient.patient_Code}}</td>
+                                <td>{{patient.patient_Name}}</td>
+                                <td>{{patient.age}}</td>
+                                <td>{{patient.diseases}}</td>
+                                <td>{{patient.patient_Room}}</td>
+                                <td class = "redirect-btn">
+                                    <button routerLink="/PatientProfile" class="redirect-to-patient">
+                                        <img class = "redirect-img" src="assets\redirect.png" alt="redirect">
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <app-pagination [totalPages]="totalPages"
+                                [currentPage]="currentPage"
+                                [shownOnPage]="shownOnPage"
+                                [totalInfo]="totalInfo"
+                                (pageChanged)="onPageChange($event)">
+                </app-pagination>
+                
+            </div>}
+            
+        </div>
+
+    </div>    
+
+</div>

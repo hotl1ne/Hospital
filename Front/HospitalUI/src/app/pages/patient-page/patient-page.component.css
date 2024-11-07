@@ -1,0 +1,308 @@
+*{
+    font-family: "Kanit", sans-serif;
+}
+
+.patient-page-wrapper
+{
+    display: flex;
+    background-color: #E5E5E5;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-content-wrapper{
+    display: flex;
+    flex-grow: 1;
+}
+
+.main-content{
+    flex-grow: 1;
+    margin-left: 140px;
+    margin-top: 100px;
+    background-color: #E5E5E5;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.theme-of-page{
+    display: flex;
+    width: 97%;
+    font-family: "Kanit", sans-serif;
+    font-size: x-large;
+}
+
+.profile-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-top: 10px;
+    padding: 20px 20px 20px 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.profile-content-theme{
+    display: flex;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 97%;
+}
+
+.text-theme,
+.theme,
+.about-text{
+    font-family: "Kanit", sans-serif;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.add-patient,
+.patient-list{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.6s ease-in-out;
+    font-weight: bold;
+}
+
+.add-patient{
+    background-color: blue;
+}
+
+.patient-list{
+    background-color: #FF706F;
+}
+
+.add-patient:hover{
+    background-color: rgb(101, 101, 248);
+}
+
+.patient-list:hover{
+    background-color: #ffa8a8;
+}
+
+.avatar-maininfo-content{
+    display: flex;
+    margin-top: 15px;
+    flex-direction: row;
+    gap: 70px;
+    height: 230px;
+    padding-left: 20px;
+    padding-right: 0px;
+    width: 97%;
+}
+
+.patient-avatar{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 15px;
+}
+
+img.patient-pht {
+    height: 240px;
+}
+
+.patient-info{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 900px;
+    border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+}
+
+.about-content-text{
+    height: auto;
+    margin-top: 10px;
+}
+
+.about-text{
+    text-wrap: wrap;
+    color: #271E4A;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.email,
+.mobile-phone,
+.adress{
+    font-family: "Kanit", sans-serif;
+    display: grid;
+}
+
+.contact-span{
+    margin-top: 20px;
+    color: #271E4A;
+}
+
+.additional-info-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 50px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 0px;
+    width: 97%;
+}
+
+.past-visit-table{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 20px 20px 20px 20px;
+    width: 650px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.past-visit-table h3,
+.general-report h3,
+.text-theme h3,
+.theme-of-box h3{
+    font-family: "Kanit", sans-serif;
+}
+
+.general-report{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 20px 20px 20px 20px;
+    width: 470px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.table-wrapper{
+    width: 100%;
+    height: 270px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead{
+    background-color: #efedf5;
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+    height: 30px;
+}
+
+table tbody{
+    z-index: 999;
+}
+
+th,td{
+    font-family: "Kanit", sans-serif;   
+}
+
+tr{
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+tr:last-child{
+    border-bottom: none;
+}
+
+.td-threatment{
+    text-align: center;
+    padding: 10px;
+}
+
+.threatment{
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    font-size: small;
+}
+
+.actions
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-visit{
+    cursor: pointer;
+    background-color: none;
+    background: none;
+    border: none;
+    width: 52px;
+    height: 29px;
+}
+
+.general-report-wrapper{
+    height: 250px;
+}
+
+
+.charges {
+    font-weight: bold;
+}
+  
+.patient-prediction{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 0px;
+    max-width: 97%;
+}
+
+.patient-prediction-contenttbox{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    max-width: 1200px;
+    height: 600px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+}
+
+.patient-symptoms,
+.visit-reason,
+.patient-current-treatment{
+    padding: 20px 20px 20px 20px;
+}
+
+.patient-symptoms-text,
+.reason-visit-text,
+.patient-treatment-text{
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal; 
+}
+
+.ai-model-prediciton{
+    padding: 20px 20px 20px 20px;   
+}
+
+::ng-deep app-sidebar span {
+    
+    color: black;
+
+}
