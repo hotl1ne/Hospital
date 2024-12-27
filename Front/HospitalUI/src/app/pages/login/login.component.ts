@@ -16,9 +16,13 @@ import { ILogin } from '../../models/Auth/IAuth.module';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+  bad_password = false;
+  bad_request = false;
+  other_problem = false;
   model: ILogin = { email: '', password: '' };
 
-  constructor(private authService: Auth,private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private authService: Auth,private formBuilder: FormBuilder, private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -30,17 +34,37 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (this.loginForm.valid) {
       this.model = this.loginForm.value;
+
     }
+    const button = document.getElementById('loginBtn') as HTMLButtonElement;
+    button!.disabled = true;
     this.authService.login(this.model).subscribe({
       next: (response) =>
       {
         this.authService.saveToken(response.token);
+        localStorage.setItem("id", response.id);
         this.router.navigate(['Dashboard']);
       },
-      error: (response) =>
+      error: (error) =>
       {
-        alert("Ой... щось пішло не так")
+        if(error.status === 404){
+        this.bad_password = true;
+        }else if(error.status === 400)
+        {
+          this.bad_request = true;
+        }
+        else{
+          this.other_problem = true;
+        }
+
+
+        button!.disabled = false;
       }
     })
+  }
+
+  resetWarnings(): void {
+    this.bad_password = false;
+    this.other_problem = false;
   }
 }

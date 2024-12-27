@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class StatusPagService {
 
-  private idSource = new BehaviorSubject<number>(0); // Початкове значення 0
+  private idSource = new BehaviorSubject<number>(1); 
   currentId$ = this.idSource.asObservable();
 
   changeView(id: number): void {

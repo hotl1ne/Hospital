@@ -7,14 +7,27 @@
 
         <form id="loginForm" class="loginForm" method="post" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
        
-            <input id="loginInfo" class="email-input" placeholder=" " type="text" formControlName="email">
+            <input id="loginInfo" class="email-input" placeholder=" " type="text" formControlName="email" (focus)="resetWarnings()">
             <label id="loginLabel" for="loginInfo">Email</label>
            
 
-            <input id="passwordInfo" class="password-input" placeholder=" " type="password" formControlName="password">
+            <input id="passwordInfo" class="password-input" placeholder=" " type="password" formControlName="password" (focus)="resetWarnings()">
             <label id="passwordLabel" for="passwordInfo">Password</label>
+
+            @if(bad_password)
+            {
+                <span class = "error-span-text">Wrong password or email! Try again</span>
+            }
+            @if(bad_request)
+            {
+                <span class = "error-span-text">Bad request! Please, try again</span>
+            }
+            @if(other_problem)
+            {
+                <span class = "error-span-text">Something went wrong! Please, try again</span>
+            }
        
-            <button type="submit" class="login-btn">Login</button>
+            <button id="loginBtn"  type="submit" class="login-btn">Login</button>
         
         </form>
     </div>

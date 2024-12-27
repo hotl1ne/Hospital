@@ -26,7 +26,7 @@
                     <img src="assets\opd.svg" alt="opd">
 
                     <div class="count-name">
-                        <span>{{patientInfo.opd}}</span>
+                        <span>{{patientSurvey.opd}}</span>
                         <span style="font-weight: bold;">OPD today</span>
                     </div>
 
@@ -37,7 +37,7 @@
                     <img src="assets\relieved.svg" alt="patient">
 
                     <div class="count-name">
-                        <span>{{patientInfo.relieved}}</span>
+                        <span>{{patientSurvey.relieved}}</span>
                         <span style="font-weight: bold;" >Relieved today</span>
                     </div>
 
@@ -48,7 +48,7 @@
                     <img src="assets\patient.svg" alt="">
 
                     <div class="count-name">
-                        <span>{{patientInfo.opd}}</span>
+                        <span>{{patientSurvey.inPatient}}</span>
                         <span style="font-weight: bold;" >In Patient today</span>
                     </div>
 
@@ -59,7 +59,7 @@
                     <img src="assets\ventilator.svg" alt="">
 
                     <div class="count-name">
-                        <span>{{patientInfo.onVentilation}}</span>
+                        <span>{{patientSurvey.ventilator}}</span>
                         <span style="font-weight: bold;" >Ventilator</span>
                     </div>
 
@@ -109,7 +109,7 @@
                     <div class="list-of-files">
                         @for (pdfs of pdfPaths; track $index) 
                         {
-                             <app-pdf-viewer pdfFileName={{getPdfFileName(pdfs)}} pdfFilePath={{pdfs}}></app-pdf-viewer>
+                             <app-pdf-viewer pdfFileName={{getPdfFileName(pdfs.pdfs)}} pdfFilePath={{pdfs}}></app-pdf-viewer>
                         }
                     </div>
                 </div>

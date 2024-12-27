@@ -6,11 +6,9 @@ export const guardGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const auth = inject(Auth);
 
-  if(auth.checkToken())
-  {
+  if(auth.checkToken()) {
     return true;
-  }
-  else{
+  } else {
     router.navigate(['']);
     return false;
   }

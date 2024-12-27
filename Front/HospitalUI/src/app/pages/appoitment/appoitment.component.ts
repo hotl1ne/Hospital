@@ -6,6 +6,7 @@ import { SearchBarComponent } from "../../layouts/search-bar/search-bar.componen
 import { PaginationComponent } from "../../layouts/pagination/pagination.component";
 import { IAppointment } from '../../models/Appointment/IApointment.module';
 import { LoaderComponent } from "../../layouts/loader/loader.component";
+import { SortTableService } from '../../core/services/SortService/sort-table.service';
 
 @Component({
   selector: 'app-appoitment',
@@ -15,7 +16,9 @@ import { LoaderComponent } from "../../layouts/loader/loader.component";
   styleUrl: './appoitment.component.css'
 })
 export class AppoitmentComponent implements AfterViewInit {
-    [x: string]: any;
+
+
+  constructor(private sort: SortTableService){}
 
     isLoading = true;
 
@@ -23,6 +26,10 @@ export class AppoitmentComponent implements AfterViewInit {
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
+    }
+
+    protected sortTable(id: number) : void {
+      this.sort.sortTbl(id);
     }
 
     public appointments: IAppointment[] = [
@@ -108,7 +115,7 @@ export class AppoitmentComponent implements AfterViewInit {
       this.currentPage = newPage;
     }
 
-    handleSearch(searchTerm: string) {
+    protected handleSearch(searchTerm: string) {
         if (searchTerm) {
           this.searchFilter = this.appointments.filter(item =>
             item.patient_Name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -119,49 +126,5 @@ export class AppoitmentComponent implements AfterViewInit {
     
         this.currentPage = 1;
       }
-
-  sortTable(n: number): void {
-    const table = document.getElementById("myTable") as HTMLTableElement | null;
-    if (!table) {
-        console.error("Table element not found.");
-        return;
-    }
-
-    let rows: HTMLCollectionOf<HTMLTableRowElement>, switching: boolean, i: number, x: HTMLElement, y: HTMLElement, shouldSwitch: boolean = false, dir: string, switchcount = 0;
-    switching = true;
-    dir = "asc";
-
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n] as HTMLElement;
-            y = rows[i + 1].getElementsByTagName("TD")[n] as HTMLElement;
-
-            if (dir === "asc") {
-                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                    shouldSwitch = true;
-                    break;
-                }
-            } else if (dir === "desc") {
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                    shouldSwitch = true;
-                    break;
-                }
-            }
-        }
-        if (shouldSwitch) {
-            rows[i].parentNode!.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount++;
-        } else {
-            if (switchcount === 0 && dir === "asc") {
-                dir = "desc";
-                switching = true;
-            }
-        }
-    }
-  }
 }
 

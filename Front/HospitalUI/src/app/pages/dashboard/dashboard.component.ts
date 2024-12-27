@@ -7,8 +7,12 @@ import { PdfViewerComponent } from "../../layouts/pdf-viewer/pdf-viewer.componen
 import { Survey } from '../../models/Dashboard/IDashboard.module';
 import { IAppointment } from '../../models/Appointment/IApointment.module';
 import { ITeam } from '../../models/Team/ITeam.module';
-import { After } from 'v8';
 import { LoaderComponent } from "../../layouts/loader/loader.component";
+import { PDFs } from '../../models/Dashboard/IPDFFiles.module';
+import { DashboardService } from '../../core/services/DashboardService/dashboard.service';
+import { ChartData } from '../../models/Dashboard/LineChartData.module';
+import { BarChartData } from '../../models/Dashboard/BarChartData.module';
+import { DashboardDataService } from '../../core/services/DashboardService/GetDataService/dashboard-data.service';
 
 
 
@@ -21,10 +25,65 @@ import { LoaderComponent } from "../../layouts/loader/loader.component";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'] 
 })
-export class DashboardComponent implements AfterViewInit{
+export class DashboardComponent implements AfterViewInit, OnInit{
   
 
-  isLoading = true;
+  isLoading!: boolean;
+
+  pdfPaths: PDFs[] = [];
+
+  patientSurvey: Survey = {
+    opd: 0,
+    relieved: 0,
+    inPatient: 0,
+    ventilator: 0
+  }
+
+  protected lineChartData: ChartData[] = [
+    { data: [], label: 'New Patients', borderColor: 'rgba(234, 104, 162, 1)', fill: false, lineTension: 0.5, pointRadius: 0 },
+    { data: [], label: 'Old Patients', borderColor: 'rgba(104, 162, 234, 1)', fill: false, lineTension: 0.5, pointRadius: 0 }
+  ];
+
+  protected barChartData: BarChartData[] =  [
+    { 
+      data: [], 
+      label: 'Diseases A', 
+      backgroundColor: 'rgba(234, 104, 162, 1)',
+      barThickness: 15
+    },
+    { 
+      data: [], 
+      label: 'Diseases B', 
+      backgroundColor: 'rgba(104, 162, 234, 1)',
+      barThickness: 15
+    },
+    { 
+      data: [], 
+      label: 'Diseases C', 
+      backgroundColor: 'rgba(154, 204, 104, 1)',
+      barThickness: 15
+    }
+  ];
+
+  constructor(private initData: DashboardDataService) {}
+
+  async ngOnInit(): Promise<void> {
+    this.isLoading = true;
+    this.patientSurvey = await this.initData.initPatientSurvey();
+    this.initData.initLineChartData(this.lineChartData);
+    this.initData.initBarChartData(this.barChartData);
+    this.pdfPaths = [
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' },
+      { pdfs: 'assets/pdfs/Blood Test Results.pdf' }
+    ];
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -32,32 +91,12 @@ export class DashboardComponent implements AfterViewInit{
     }, 1000);
   }
 
-  pdfPaths = [
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf',
-    'assets/pdfs/Blood Test Results.pdf'
-  ];
-
-  getPdfFileName(pdfPath: string): string {
+  protected getPdfFileName(pdfPath: string): string {
     const parts = pdfPath.split('/');
     return parts[parts.length - 1]; 
   }
-  
 
-  protected patientInfo: Survey = {
-    opd: 150,
-    relieved: 100,
-    inPatient: 89,
-    onVentilation: 140
-  }
-
-  public appointments: IAppointment[] = [
+  protected appointments: IAppointment[] = [
     {id: "1", patient_Name: "Sara Crouse", doctor_Name: "Doctor House", cabinet_Location: "Cabinet 123, floor 1", check_In: "Yes", appointment_Type: "Check Mentaly", time: "9:30", date: "12.12.2003"},
     {id: "2", patient_Name: "Sara Crouse", doctor_Name: "Doctor House", cabinet_Location: "Cabinet 123, floor 1", check_In: "Yes", appointment_Type: "Check Mentaly", time: "9:30", date: "12.12.2003"},
     {id: "3", patient_Name: "Sara Crouse", doctor_Name: "Doctor House", cabinet_Location: "Cabinet 123, floor 1", check_In: "Yes", appointment_Type: "Check Mentaly", time: "9:30", date: "12.12.2003"},
@@ -69,7 +108,7 @@ export class DashboardComponent implements AfterViewInit{
     {id: "9", patient_Name: "Sara Crouse", doctor_Name: "Doctor House", cabinet_Location: "Cabinet 123, floor 1", check_In: "Yes", appointment_Type: "Check Mentaly", time: "9:30", date: "12.12.2003"},
   ]
 
-  public doctors: ITeam[] = [
+  protected doctors: ITeam[] = [
     {doctor_Pic: "assets/doctor-pic.svg", doctor_Name: "Doctor Name", status: "Active"},
     {doctor_Pic: "assets/doctor-pic.svg", doctor_Name: "Doctor Name", status: "Active"},
     {doctor_Pic: "assets/doctor-pic.svg", doctor_Name: "Doctor Name", status: "Active"},
@@ -79,46 +118,20 @@ export class DashboardComponent implements AfterViewInit{
     {doctor_Pic: "assets/doctor-pic.svg", doctor_Name: "Doctor Name", status: "Active"}
   ]
 
-  public lineChartData = [
-    { data: [100, 200, 150, 300, 200, 100, 395, 290, 150, 300, 350], label: 'New Patients', borderColor: 'rgba(234, 104, 162, 1)', fill: false,  style: 'line', lineTension: 0.5, pointRadius: 0 },
-    { data: [150, 250, 300, 150, 200, 50, 350, 300, 300, 250, 100, 200], label: 'Old Patients', borderColor: 'rgba(104, 162, 234, 1)', fill: false, lineTension: 0.5, pointRadius: 0 }
-  ];
+  protected barChartLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  public barChartData = [
-    { 
-      data: [50, 100, 150, 120, 170, 200], 
-      label: 'Diseases A', 
-      backgroundColor: 'rgba(234, 104, 162, 1)',
-      barThickness: 15
-    },
-    { 
-      data: [60, 110, 160, 130, 180, 210], 
-      label: 'Diseases B', 
-      backgroundColor: 'rgba(104, 162, 234, 1)',
-      barThickness: 15
-    },
-    { 
-      data: [40, 90, 140, 110, 160, 190], 
-      label: 'Diseases C', 
-      backgroundColor: 'rgba(154, 204, 104, 1)',
-      barThickness: 15
-    }
-  ];
-
-  public barChartLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-  public barChartOptions: ChartOptions = {
+  protected barChartOptions: ChartOptions = {
     responsive: true,
     scales: {
       x: {
-        stacked: true,  // Робимо стовпчики накладеними один на одного
+        stacked: true,  
         grid: {
           display: false
         },
         
       },
       y: {
-        stacked: true,  // Робимо стовпчики накладеними один на одного
+        stacked: true,  
         min: 0,
         max: 400,
         ticks: {
@@ -138,9 +151,9 @@ export class DashboardComponent implements AfterViewInit{
       }
     }
 
-  public lineChartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  protected lineChartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  public lineChartOptions: ChartOptions = {
+  protected lineChartOptions: ChartOptions = {
     responsive: true,
     scales: {
       x: {

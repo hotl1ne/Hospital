@@ -2,7 +2,7 @@ export interface Survey{
     opd: number,
     relieved: number, 
     inPatient: number,
-    onVentilation: number
+    ventilator: number
 }
 
 export interface SurveyResponse{

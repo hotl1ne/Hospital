@@ -16,27 +16,27 @@ export const routes: Routes = [
     {
         path: "Dashboard",
         component: DashboardComponent,
-        //canActivate: [guardGuard]
+        canActivate: [guardGuard]
     },
     {
         path: "Appointment",
-        component: AppoitmentComponent
-        //canActivate: [quardGuard]
+        component: AppoitmentComponent,
+        canActivate: [guardGuard]
     },
     {
         path: "Patient",
         component: PatientListComponent,
-        //canActivate: [quardGuard]
+        canActivate: [guardGuard]
     },
     {
         path: "PatientProfile",
         component: PatientPageComponent,
-        /*canActivate: [guardGuard]*/
+        canActivate: [guardGuard]
     },
     {
         path: "AddPatient",
         component: AddPatientComponent,
-        /*canActivate: [guardGuard]*/
+        canActivate: [guardGuard]
     }
 
 ];
